@@ -45,6 +45,7 @@
       <div class="button-container">
         <a class="button disabled" title="Coming soon"><i class="fas fa-file-pdf"></i><span>Paper (coming soon)</span></a>
         <a class="button" href="https://github.com/andyzworks/progresscompass" target="_blank"><i class="fab fa-github"></i><span>Code</span></a>
+        <a class="button" href="#video"><i class="fas fa-play"></i><span>Video</span></a>
       </div>
     </div>
     <div class="header-image">
@@ -76,6 +77,17 @@
 </div>
 
 <article>
+
+  <h1 id="video" style="margin-top:34px">Video Overview</h1>
+  <figure style="margin-top:12px">
+    <video controls preload="metadata" poster="static/video/poster.jpg" style="width:100%;border-radius:10px;background:#000">
+      <source src="static/video/progresscompass_overview.mp4" type="video/mp4">
+      <track kind="captions" src="static/video/captions_en.vtt" srclang="en" label="English">
+      Your browser does not support HTML video.
+    </video>
+    <figcaption>A two-minute walk through the paper: the problem, the benchmark, the diagnosis,
+    the ProgressCompass loop and the results. Captions are drawn into the video.</figcaption>
+  </figure>
 
   <figure>
     <img class="zoomable" src="static/img/teaser.png" alt="Three moments of one task that need context">
@@ -116,6 +128,7 @@
   </p>
 
   <div class="jump">
+    <a href="#video">Video</a>
     <a href="#problem">Context dependence</a>
     <a href="#benchmark">ContextProgress-Bench</a>
     <a href="#diagnosis">Where PRMs get lost</a>
