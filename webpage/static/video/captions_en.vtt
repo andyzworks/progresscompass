@@ -1,70 +1,78 @@
 WEBVTT
 
 1
-00:00:06.300 --> 00:00:11.600
+00:00:06.300 --> 00:00:10.000
 A Progress Reward Model (PRM) scores how far a task has come at every step.
 
 2
-00:00:11.800 --> 00:00:17.600
+00:00:10.100 --> 00:00:13.700
 It serves as a dense reward, a verifier of each step, and a monitor of the execution.
 
 3
-00:00:18.300 --> 00:00:21.000
+00:00:14.300 --> 00:00:16.400
 In long tasks, the current frame often cannot tell how far the task has come.
 
 4
-00:00:21.000 --> 00:00:25.000
+00:00:16.500 --> 00:00:20.500
 State Recall: which mat did this block come from? That fact left the frame long ago.
 
 5
-00:00:25.200 --> 00:00:29.200
+00:00:20.700 --> 00:00:24.700
 Sequence Tracking: is the leftmost block done? The order is not visible in one frame.
 
 6
-00:00:29.400 --> 00:00:34.600
+00:00:24.900 --> 00:00:29.600
 Recurrence Disambiguation: just before and after a placement, the frames look the same.
 
 7
-00:00:35.300 --> 00:00:40.400
-We run five PRMs with the same input format, once without and once with the right context.
+00:00:30.300 --> 00:00:34.600
+The PRM is given one instruction for the whole episode.
 
 8
-00:00:40.600 --> 00:00:50.600
-Every one of them cuts its progress error by 77% to 82%.
+00:00:34.800 --> 00:00:42.600
+With the right context, each step gets its own instruction, and progress can be read from its own clip.
 
 9
-00:00:51.300 --> 00:00:56.600
-PRMs are not blind but lost: they need to be told where in the task they are.
+00:00:43.300 --> 00:00:48.400
+We run five PRMs with the same input format, once without and once with the right context.
 
 10
-00:00:57.300 --> 00:01:03.400
-ProgressCompass keeps the PRM frozen and lets general-purpose VLMs supply the context.
+00:00:48.600 --> 00:00:58.600
+Every one of them cuts its progress error by 77% to 82%.
 
 11
-00:01:03.600 --> 00:01:10.000
-An Orienter states the step, the PRM scores it, and a Verifier checks that it is done.
+00:00:59.300 --> 00:01:04.600
+PRMs are not blind but lost: they need to be told where in the task they are.
 
 12
-00:01:10.200 --> 00:01:16.600
-A text-only Navigator runs the loop and carries the verified plan from step to step.
+00:01:05.300 --> 00:01:11.400
+ProgressCompass keeps the PRM frozen and lets general-purpose VLMs supply the context.
 
 13
-00:01:17.300 --> 00:01:24.600
-Wrapped in the loop, the same frozen RoboMeter cuts its error from 25.4 to 9.3.
+00:01:11.600 --> 00:01:18.000
+An Orienter states the step, the PRM scores it, and a Verifier checks that it is done.
 
 14
-00:01:24.800 --> 00:01:32.600
-Its curves follow the ground truth where the frozen model drifts, stalls, or falls back.
+00:01:18.200 --> 00:01:24.600
+A text-only Navigator runs the loop and carries the verified plan from step to step.
 
 15
-00:01:33.300 --> 00:01:39.000
-It stays robust when the video stops early, does more than asked, or follows an unrelated task.
+00:01:25.300 --> 00:01:32.600
+Wrapped in the loop, the same frozen RoboMeter cuts its error from 25.4 to 9.3.
 
 16
-00:01:39.200 --> 00:01:46.600
-Parallelizing the loop cuts wall-clock time by 65.6%, keeping the cost of the added components low.
+00:01:32.800 --> 00:01:40.600
+Its curves follow the ground truth where the frozen model drifts, stalls, or falls back.
 
 17
-00:01:47.300 --> 00:01:54.500
+00:01:41.300 --> 00:01:47.000
+It stays robust when the video stops early, does more than asked, or follows an unrelated task.
+
+18
+00:01:47.200 --> 00:01:54.600
+Parallelizing the loop cuts wall-clock time by 65.6%, keeping the cost of the added components low.
+
+19
+00:01:55.300 --> 00:02:02.500
 ProgressCompass: embodied progress reward models, reoriented with the right context.
 
