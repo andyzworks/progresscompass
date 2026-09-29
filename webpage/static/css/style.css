@@ -340,3 +340,33 @@ nav.jump {
 nav.jump::-webkit-scrollbar { display: none; }
 nav.jump a { flex: 1 0 auto; text-align: center; white-space: nowrap; padding: 6px 14px; }
 @media (max-width: 900px) { nav.jump { justify-content: flex-start; } nav.jump a { flex: 0 0 auto; } }
+
+/* ------------------------------------------ alignment: one grid for every two-column block */
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  column-gap: 40px;
+  align-items: start;
+  margin: 8px 0 28px;
+}
+.two-col.cols-diag { grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); }
+.two-col.cols-method { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: stretch; }
+.two-col > div > p:first-child { margin-top: 0; }
+.two-col > div > p:last-child { margin-bottom: 0; }
+.side-fig { margin: 0; }
+.two-col figure img { width: 100%; max-width: none; display: block; box-sizing: border-box; }
+.side-fig figcaption { margin-top: 8px; }
+/* the four component cards fill the height of the loop figure */
+.cols-method .components { grid-template-rows: 1fr 1fr; height: 100%; align-content: stretch; }
+/* the table spans the text width */
+table.results { width: 100%; min-width: 640px; margin: 10px 0 4px; }
+article h1 { font-size: 28px; }
+@media (max-width: 900px) {
+  .two-col, .two-col.cols-diag, .two-col.cols-method { grid-template-columns: 1fr; row-gap: 18px; }
+  .cols-method .components { height: auto; }
+}
+.cols-method .components { grid-template-columns: 1fr; grid-template-rows: repeat(4, 1fr); gap: 12px; }
+.cols-method .component { display: flex; flex-direction: column; justify-content: center; }
+.cols-method .component b { display: inline; margin-right: 8px; }
+.cols-method .component br { display: none; }
+.cols-method .component .model::after { content: ""; display: block; }

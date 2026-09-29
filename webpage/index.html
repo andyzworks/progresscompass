@@ -226,7 +226,7 @@
     model without context. Progress is on a 0&ndash;100 scale.</figcaption>
   </figure>
 
-  <div class="two-col side-narrow">
+  <div class="two-col cols-diag">
     <div>
       <p>
         Without context, every PRM is far from the true progress, with MAE between 15.6 and 31.0.
@@ -237,7 +237,7 @@
       <p class="callout">Not blind, but lost.</p>
     </div>
     <figure class="side-fig">
-      <img class="zoomable" src="static/img/fig_gap_scatter.png" alt="Paired MAE per subtask" style="max-width:250px">
+      <img class="zoomable" src="static/img/fig_gap_scatter.png" alt="Paired MAE per subtask">
       <figcaption>Each dot is one subtask of one model, at its MAE without (x) and with (y)
       context; dots below the diagonal are where context helped.</figcaption>
     </figure>
@@ -260,9 +260,9 @@
     well what the other does poorly, and we design an agentic loop around this split. The PRM stays
     frozen and nothing is trained.
   </p>
-  <div class="two-col">
-    <figure style="margin:0">
-      <img class="zoomable" src="static/img/fig_progress_compass.png" alt="The ProgressCompass loop" style="max-width:420px">
+  <div class="two-col cols-method">
+    <figure class="side-fig">
+      <img class="zoomable" src="static/img/fig_progress_compass.png" alt="The ProgressCompass loop">
       <figcaption><strong>Figure 4: ProgressCompass.</strong> The Navigator runs the loop. The
       Orienter gives the context to the frozen PRM and the expected transition to the Verifier; the
       PRM proposes a completion and the Verifier checks it until the step is accepted, then the
@@ -313,8 +313,8 @@
         exceeds zero.
       </p>
     </div>
-    <figure style="margin:0">
-      <img class="zoomable" src="static/img/fig_negatives_3d.png" alt="Deviation on the three negatives" style="max-width:320px">
+    <figure class="side-fig">
+      <img class="zoomable" src="static/img/fig_negatives_3d.png" alt="Deviation on the three negatives">
       <figcaption><strong>Figure 7: Negatives.</strong> Mean deviation of each method from the
       correct progress on Early stop, Extra steps and Mismatch; lower is better.</figcaption>
     </figure>
@@ -330,8 +330,8 @@
         runs; what changes is verification, not planning.
       </p>
     </div>
-    <figure style="margin:0">
-      <img class="zoomable" src="static/img/fig_ablation_bars.png" alt="Ablating the expected transition" style="max-width:380px">
+    <figure class="side-fig">
+      <img class="zoomable" src="static/img/fig_ablation_bars.png" alt="Ablating the expected transition">
       <figcaption><strong>Figure 8: Ablating the expected transition.</strong> Error at the end of
       each subtask; lower is better.</figcaption>
     </figure>
