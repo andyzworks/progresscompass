@@ -321,3 +321,22 @@ article > figure > img, .two-col figure img {
   .highlights { grid-template-columns: repeat(2, 1fr); }
   nav.jump { margin: 20px -24px 0; }
 }
+
+/* title typeface and a one-line section nav */
+.header-content h1 {
+  font-family: "Sora", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: #efe6ff;
+}
+.header-content h2 { font-family: "Sora", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; font-weight: 700; letter-spacing: -0.3px; }
+nav.jump {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+nav.jump::-webkit-scrollbar { display: none; }
+nav.jump a { flex: 1 0 auto; text-align: center; white-space: nowrap; padding: 6px 14px; }
+@media (max-width: 900px) { nav.jump { justify-content: flex-start; } nav.jump a { flex: 0 0 auto; } }
