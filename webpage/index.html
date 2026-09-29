@@ -24,19 +24,19 @@
       </p>
       <div class="icon-container">
         <div class="icon-item">
-          <div class="badge" style="background:#6633a6">1</div>
+          <div class="badge" style="background:#6633a6"><i class="fas fa-database"></i></div>
           <div><strong>ContextProgress-Bench</strong>: 24 hand-selected manipulation tasks, 120
           episodes and 552 annotated subtask intervals, covering State Recall, Sequence Tracking
           and Recurrence Disambiguation.</div>
         </div>
         <div class="icon-item">
-          <div class="badge" style="background:#236ca6">2</div>
+          <div class="badge" style="background:#236ca6"><i class="fas fa-magnifying-glass-chart"></i></div>
           <div><strong>A paired diagnosis</strong>: five PRMs, even those reading the whole
           history, are far off without the right context, and each cuts its error by 77&ndash;82%
           once the context is given. PRMs are <em>not blind but lost</em>.</div>
         </div>
         <div class="icon-item">
-          <div class="badge" style="background:#be5718">3</div>
+          <div class="badge" style="background:#be5718"><i class="fas fa-compass"></i></div>
           <div><strong>ProgressCompass</strong>: an autonomous agentic loop that supplies the
           right context to a frozen PRM with general-purpose VLMs, with no training, cutting its
           progress error by 63%.</div>
@@ -124,7 +124,14 @@
     better on longer, more complex tasks.
   </p>
 
-  <div class="jump">
+  <div class="highlights">
+    <div class="hl"><div class="hl-num">77&ndash;82%</div><div class="hl-txt">error cut for <b>every</b> PRM once it is given the right context</div></div>
+    <div class="hl"><div class="hl-num">&minus;63%</div><div class="hl-txt">progress error of the same frozen PRM inside ProgressCompass</div></div>
+    <div class="hl"><div class="hl-num">+76%</div><div class="hl-txt">rank agreement &rho; with the true progress, with no training</div></div>
+    <div class="hl"><div class="hl-num">&minus;65.6%</div><div class="hl-txt">wall-clock time from parallelizing the loop</div></div>
+  </div>
+
+  <nav class="jump">
     <a href="#video">Video</a>
     <a href="#problem">Context dependence</a>
     <a href="#benchmark">ContextProgress-Bench</a>
@@ -132,7 +139,7 @@
     <a href="#method">ProgressCompass</a>
     <a href="#results">Results</a>
     <a href="#bibtex">BibTeX</a>
-  </div>
+  </nav>
 
   <!-- ============================================================ problem -->
   <h1 id="problem">Context-Dependent Progress Estimation</h1>
@@ -216,7 +223,7 @@
     model without context. Progress is on a 0&ndash;100 scale.</figcaption>
   </figure>
 
-  <div class="two-col">
+  <div class="two-col side-narrow">
     <div>
       <p>
         Without context, every PRM is far from the true progress, with MAE between 15.6 and 31.0.
@@ -226,8 +233,8 @@
       </p>
       <p class="callout">Not blind, but lost.</p>
     </div>
-    <figure style="margin:0">
-      <img class="zoomable" src="static/img/fig_gap_scatter.png" alt="Paired MAE per subtask" style="max-width:360px">
+    <figure class="side-fig">
+      <img class="zoomable" src="static/img/fig_gap_scatter.png" alt="Paired MAE per subtask" style="max-width:250px">
       <figcaption>Each dot is one subtask of one model, at its MAE without (x) and with (y)
       context; dots below the diagonal are where context helped.</figcaption>
     </figure>
@@ -304,7 +311,7 @@
       </p>
     </div>
     <figure style="margin:0">
-      <img class="zoomable" src="static/img/fig_negatives_3d.png" alt="Deviation on the three negatives" style="max-width:380px">
+      <img class="zoomable" src="static/img/fig_negatives_3d.png" alt="Deviation on the three negatives" style="max-width:320px">
       <figcaption><strong>Figure 7: Negatives.</strong> Mean deviation of each method from the
       correct progress on Early stop, Extra steps and Mismatch; lower is better.</figcaption>
     </figure>
