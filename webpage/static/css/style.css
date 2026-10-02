@@ -371,3 +371,17 @@ article h1 { font-size: 28px; }
 .cols-method .component br { display: none; }
 .cols-method .component .model::after { content: ""; display: block; }
 .button .hf-logo { height: 1.15em; width: auto; vertical-align: -0.2em; }
+
+/* text and figure share one horizontal centre line */
+.two-col { align-items: center; }
+.two-col.cols-method { align-items: stretch; }
+/* centre the text on the picture itself, with the caption below the picture */
+.two-col:not(.cols-method) { grid-template-rows: auto auto; row-gap: 0; }
+.two-col:not(.cols-method) > .side-fig { display: contents; }
+.two-col:not(.cols-method) > div { grid-column: 1; grid-row: 1; align-self: center; }
+.two-col:not(.cols-method) > .side-fig > img { grid-column: 2; grid-row: 1; align-self: center; }
+.two-col:not(.cols-method) > .side-fig > figcaption { grid-column: 2; grid-row: 2; margin-top: 8px; }
+@media (max-width: 900px) {
+  .two-col:not(.cols-method) > div, .two-col:not(.cols-method) > .side-fig > img,
+  .two-col:not(.cols-method) > .side-fig > figcaption { grid-column: 1; grid-row: auto; }
+}
