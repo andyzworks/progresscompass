@@ -18,15 +18,11 @@ POSTS = [
      'Animated loop: a robot covers three blocks and uncovers them in colour order. Beside the video, the '
      'instruction of the current step is shown as the context. On the right, the frozen PRM without context '
      'jumps around and ends near 20, while ProgressCompass follows the true progress to 100; MAE 33 to 3.',
-     """🤖 **Progress Reward Models (PRMs)** score how far a robot task has come at every step. They serve as dense rewards, step verifiers and execution monitors.
+     """🚨 **Today's progress reward models get lost on long, context-dependent tasks.** When the current frame can't tell how far a robot has come, they fail, even when they read the whole history.
 
-⏳ But in long tasks, **the current frame often can't tell.** Two frames can look the same and sit at very different progress, because what matters happened earlier.
+🧭 But they are **not blind, just lost**: give them the right context and every PRM cuts its error by 77–82%.
 
-🧭 So we ask: **are PRMs blind, or just lost?**
-
-🧵 **ProgressCompass: Embodied Progress Reward Models Are Lost Without the Right Context**
-
-Our answer: **not blind, but lost.** Given the right context, every PRM we test cuts its error by 77–82%. ProgressCompass supplies that context to a frozen PRM with general-purpose VLMs, with no training.
+🧵 **ProgressCompass** supplies that context to a frozen PRM with general-purpose VLMs. No training, and the error drops by 63%.
 
 📄 Paper: [andyzworks.github.io/progr…]({PDF})
 🌐 Project: [andyzworks.github.io/progr…]({PAGE})"""),
