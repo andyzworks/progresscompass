@@ -370,3 +370,4 @@ article h1 { font-size: 28px; }
 .cols-method .component b { display: inline; margin-right: 8px; }
 .cols-method .component br { display: none; }
 .cols-method .component .model::after { content: ""; display: block; }
+.button .hf-logo { height: 1.15em; width: auto; vertical-align: -0.2em; }

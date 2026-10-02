@@ -48,6 +48,7 @@
       <div class="button-container">
         <a class="button" href="static/paper/ProgressCompass.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i><span>Paper</span></a>
         <a class="button" href="https://github.com/andyzworks/progresscompass" target="_blank"><i class="fab fa-github"></i><span>Code</span></a>
+        <a class="button" href="https://huggingface.co/datasets/Sterzhang/ContextProgress-Bench" target="_blank" rel="noopener"><img class="hf-logo" src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt=""><span>Dataset</span></a>
         <a class="button" href="#video"><i class="fas fa-play"></i><span>Video</span></a>
       </div>
     </div>
@@ -179,7 +180,9 @@
     We build ContextProgress-Bench from robot-manipulation trajectories in RMBench, RoboDojo and
     LIBERO-Mem. We select by hand the tasks whose progress is context-dependent, sample five
     episodes of each task at random, and annotate by hand the subtask intervals and the context
-    each interval requires.
+    each interval requires. The benchmark is released on
+    <a href="https://huggingface.co/datasets/Sterzhang/ContextProgress-Bench" target="_blank" rel="noopener">Hugging Face</a>,
+    with every full video, subtask clip, instruction and boundary.
   </p>
   <div class="stats">
     <div class="stat"><div class="num">24</div><div class="lbl">tasks</div></div>
