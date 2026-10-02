@@ -18,11 +18,11 @@ POSTS = [
      'Animated loop: a robot covers three blocks and uncovers them in colour order. Beside the video, the '
      'instruction of the current step is shown as the context. On the right, the frozen PRM without context '
      'jumps around and ends near 20, while ProgressCompass follows the true progress to 100; MAE 33 to 3.',
-     """🚨 **VLAs get lost on long, context-dependent tasks. So do the reward models that label their dense progress.**
+     """🚨 **VLAs struggle on long, context-dependent tasks. Can the reward models that label their dense progress do better?**
 
-🧭 The key is the **right context**: what the model needs to judge the current moment.
+🧭 Our work shows why they fail: **not because they are blind, but because they get lost in the context.** Given the right context, the same progress reward models are reliable again.
 
-🧵 So we build **ProgressCompass**, a training-free agentic system: off-the-shelf progress models + VLMs, guiding progress estimation in long tasks.
+🧵 So we propose **ProgressCompass**, a training-free agentic system: off-the-shelf progress models + VLMs, guiding progress estimation in long tasks.
 
 📄 ProgressCompass: Embodied Progress Reward Models Are Lost Without the Right Context
 🌐 [andyzworks.github.io/progr…]({PAGE})"""),
