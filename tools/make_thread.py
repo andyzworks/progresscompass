@@ -18,7 +18,9 @@ POSTS = [
      'Animated loop: a robot covers three blocks and uncovers them in colour order. Beside the video, the '
      'instruction of the current step is shown as the context. On the right, the frozen PRM without context '
      'jumps around and ends near 20, while ProgressCompass follows the true progress to 100; MAE 33 to 3.',
-     """🚨 **VLAs struggle on long, context-dependent tasks. Can the reward models that label their dense progress do better?**
+     """🚨 **VLAs struggle on long, context-dependent tasks**, so dense progress, a score at every step, matters for them.
+
+🤔 **Can progress reward models label dense progress for these context-dependent tasks?**
 
 🧭 Our work shows why they fail: **not because they are blind, but because they get lost in the context.** Given the right context, the same progress reward models are reliable again.
 
