@@ -18,14 +18,13 @@ POSTS = [
      'Animated loop: a robot covers three blocks and uncovers them in colour order. Beside the video, the '
      'instruction of the current step is shown as the context. On the right, the frozen PRM without context '
      'jumps around and ends near 20, while ProgressCompass follows the true progress to 100; MAE 33 to 3.',
-     """🚨 **Today's progress reward models get lost on long, context-dependent tasks.** When the current frame can't tell how far a robot has come, they fail, even when they read the whole history.
+     """🚨 **VLAs get lost on long, context-dependent tasks. So do progress reward models.**
 
-🧭 But they are **not blind, just lost**: give them the right context and every PRM cuts its error by 77–82%.
+🧭 Not blind, just lost: with the right context, every PRM cuts its error by 77–82%.
 
-🧵 **ProgressCompass** supplies that context to a frozen PRM with general-purpose VLMs. No training, and the error drops by 63%.
+🧵 **ProgressCompass** gives a frozen PRM that context. No training, −63% error.
 
-📄 Paper: [andyzworks.github.io/progr…]({PDF})
-🌐 Project: [andyzworks.github.io/progr…]({PAGE})"""),
+🌐 [andyzworks.github.io/progr…]({PAGE})"""),
 
     ('The problem', '2_problem.gif', '16 / 9',
      'Animated figure: one instruction, move each red block to the green mat and back, from left to right. '
