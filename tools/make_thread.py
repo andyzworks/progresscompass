@@ -9,7 +9,7 @@ import html, os, re
 
 OUT = os.path.join(os.path.dirname(__file__), '..', 'webpage', 'thread-draft', 'index.html')
 PAGE = 'https://andyzworks.github.io/progresscompass/'
-PDF = PAGE + 'static/paper/ProgressCompass.pdf'
+PDF = 'https://arxiv.org/pdf/2609.36684'
 CODE = 'https://github.com/andyzworks/progresscompass'
 
 # text: **bold**, blank line = paragraph, [label](url) = link shown as label
